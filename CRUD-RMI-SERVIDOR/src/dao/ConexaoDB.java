@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class ConexaoDB {
     public static final String USERNAME = "root";
     public static final String PASSWORD = "123456789";
-    public static final String DATABASE_URL = "jdbc:mysql://127.0.0.1/crud_rmi?useTimezone=true&serverTimezone=UTC";
+    public static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/crud_rmi?useTimezone=true&serverTimezone=UTC";
     
     public static Connection retornaConexao() throws Exception {
         try {
