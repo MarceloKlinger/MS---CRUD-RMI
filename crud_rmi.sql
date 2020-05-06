@@ -26,9 +26,9 @@ CREATE TABLE `data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dia` int(2) DEFAULT NULL,
   `mes` int(2) DEFAULT NULL,
-  `ano` int(2) DEFAULT NULL,
+  `ano` int(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `data` (
 
 LOCK TABLES `data` WRITE;
 /*!40000 ALTER TABLE `data` DISABLE KEYS */;
+INSERT INTO `data` VALUES (1,22,12,2019),(2,22,1,2020),(3,22,2,2020),(4,22,3,2020),(5,22,4,2020);
 /*!40000 ALTER TABLE `data` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,7 +53,7 @@ CREATE TABLE `hora` (
   `horas` int(2) DEFAULT NULL,
   `minutos` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,6 +62,7 @@ CREATE TABLE `hora` (
 
 LOCK TABLES `hora` WRITE;
 /*!40000 ALTER TABLE `hora` DISABLE KEYS */;
+INSERT INTO `hora` VALUES (1,12,34),(2,15,38),(3,9,12),(4,17,49),(5,10,7);
 /*!40000 ALTER TABLE `hora` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +78,7 @@ CREATE TABLE `local` (
   `cliente` varchar(255) DEFAULT NULL,
   `endereco` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,6 +87,7 @@ CREATE TABLE `local` (
 
 LOCK TABLES `local` WRITE;
 /*!40000 ALTER TABLE `local` DISABLE KEYS */;
+INSERT INTO `local` VALUES (1,'Amazonas Importados','Rua São José, 1610'),(2,'2A Importados','Rua Cândido Mendes, 1206'),(3,'Dular Free Shop','Avenida Padre Júlio Maria Lombaerd, 437'),(4,'Lojas Marisa','Amapá Garden Shopping - Rodovia Juscelino Kubitschek'),(5,'Renner','Amapá Garden Shopping - Rodovia Juscelino Kubitschek');
 /*!40000 ALTER TABLE `local` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,10 +101,10 @@ DROP TABLE IF EXISTS `produto`;
 CREATE TABLE `produto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(255) DEFAULT NULL,
-  `preco` varchar(255) DEFAULT NULL,
+  `preco` double(11,2) DEFAULT NULL,
   `quantidade` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,6 +113,7 @@ CREATE TABLE `produto` (
 
 LOCK TABLES `produto` WRITE;
 /*!40000 ALTER TABLE `produto` DISABLE KEYS */;
+INSERT INTO `produto` VALUES (1,'Calça',150.00,20),(2,'Camisa',50.00,20),(3,'Meia',6.00,50),(4,'Tênis',285.75,10),(5,'Cueca',10.00,80);
 /*!40000 ALTER TABLE `produto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +130,7 @@ CREATE TABLE `veiculo` (
   `modelo` varchar(255) DEFAULT NULL,
   `placa` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,6 +139,7 @@ CREATE TABLE `veiculo` (
 
 LOCK TABLES `veiculo` WRITE;
 /*!40000 ALTER TABLE `veiculo` DISABLE KEYS */;
+INSERT INTO `veiculo` VALUES (1,'Fiat','Uno','NNE2354'),(2,'Volkswagen','Gol','NUM6657'),(3,'Chevrolet','Onix','NEO8720'),(4,'Renault','Qwid','OPL2029'),(5,'Hyundai','HB20','CPR3531');
 /*!40000 ALTER TABLE `veiculo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -147,4 +152,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-22 17:00:02
+-- Dump completed on 2020-04-23  0:04:38
